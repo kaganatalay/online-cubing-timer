@@ -7,6 +7,8 @@ let io = require('socket.io')(server);
 app.use(express.static('public'));
 
 let parties = [];
+const PARTYSIZE = 2;
+
 io.on('connection', (socket) => {
     socket.on('party_created', data => {
         parties.push(data);
@@ -18,17 +20,26 @@ io.on('connection', (socket) => {
             return data == party;
         });
 
+        let err = {
+            feedback: "",
+            id: null
+        };
+
         if(exists) {
             // Join request accepted
-            const message = "You successfuly joined the party " + data;
-            socket.join(data);
-            socket.emit('join_request_accepted', message);
+            
+            // Add party size control some time
+            if(true) {
+                const message = "You successfuly joined the party " + data;
+                socket.join(data);
+                socket.emit('join_request_accepted', message);
+            } else {
+                err.feedback = "Max party size reached!"
+                err.id = 2;
+                socket.emit('join_request_declined', err);
+            }
         } else {
             // Party doesn't exist
-            let err = {
-                feedback: "",
-                id: null
-            }
 
             if(data == "") {
                 err.feedback = "You must provide a party name!"
