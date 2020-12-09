@@ -4,6 +4,6 @@ action_buttons.forEach(button => {
         button.classList.add("clicked");
         setTimeout(() => {
             button.classList.remove("clicked");
-        }, 100);
+        }, 150);
     });
 });

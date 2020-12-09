@@ -12,10 +12,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Lorem ipsum dolor sit.</h1>
-    
-    <input type="text">
-    <button class="party action">CREATE PARTY</button>
 
+    <div class="wrapper">
+        <div class="join">
+            <span class="error"></span>
+            <input placeholder="Enter Party Code" class="party-code" type="text">
+            <button class="join-party action">JOIN PARTY</button>
+        </div>
+
+        <div class="create">
+            <button class="create-party action">CREATE PARTY</button>
+        </div>
+    </div>
+    
+    <button style="display:none;" class="ready action">READY</button>
 </body>
 </html>
