@@ -52,6 +52,10 @@ io.on('connection', (socket) => {
             socket.emit('join_request_declined', err);
         }
     });
+
+    socket.on('ready', data => {
+        // do stuff
+    });
 });
 
 setInterval(() => {
@@ -59,6 +63,5 @@ setInterval(() => {
         //
     });
 }, 1000);
-
 
 

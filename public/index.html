@@ -9,7 +9,8 @@
     <script defer src="script.js"></script>
     <script defer src="animation.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/entry.css">
+    <link rel="stylesheet" href="style/race.css">
 </head>
 <body>
 
@@ -27,16 +28,19 @@
     </div>
 
     <div class="race-wrapper">
-        <div class="user">
+        <button class="ready action">READY</button>
 
+        <div class="user">
+            <div class="notifier">
+                <span>Not Ready</span>
+            </div>
         </div>
         
         <div class="opponent">
-
+            <div class="notifier">
+                <span>Not Ready</span>
+            </div>
         </div>
     </div>
-
-    
-    <button style="display:none;" class="ready action">READY</button>
 </body>
 </html>
